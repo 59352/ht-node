@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Node</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+</head>
+<body>
+    <ol>
+        <li>Hitler</li>
+        <li>Trump</li>
+        <li>John Doe</li>
+        <li>Gates</li>
+        <li>Instagram</li>
+        <input type="button", id="test", value="Download data", onclick="downloadData()">
+    </ol>
+    <script type="">
+        function downloadData() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/testajax', true);
+        xhr.send();
+        xhr.onreadystatechange = function() {
+        if (xhr.readyState != 4) return;
+        test.innerHTML = 'Готово!';
+        if (xhr.status != 200) {
+            console.log(xhr.status + ': ' + xhr.statusText);
+        } else {
+            console.log(xhr.responseText);
+        }
+        }
+        test.innerHTML = 'Загружаю...';
+        test.disabled = true;
+        }
+        // let xhr = new XMLHttpRequest();
+        // const el = document.querySelector("#test");
+        // el.addEventListener('click', (ev) =>{
+            
+        //     xhr.open('GET', '/testajax');
+        //     xhr.send();
+        //     if (xhr.status != 200) {
+        //     alert( xhr.status + ': ' + xhr.statusText ); 
+        //     alert( xhr.responseText ); 
+        //     }
+            
+
+        // })
+    </script>
+</body>
+</html>
